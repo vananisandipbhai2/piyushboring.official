@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush Boring Company - Drilling Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #777;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-image span {
+            font-size: 10px;
+            font-weight: 400;
+            margin-top: -3px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: -5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+        }
+
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .language-btn.active {
+            background: var(--secondary);
+        }
+
+        .language-btn i {
+            margin-right: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://scontent.famd21-2.fna.fbcdn.net/v/t39.30808-6/553658459_1937880787055580_7559156309781702504_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=kZpiLDaNgPMQ7kNvwEyxmFq&_nc_oc=Adk3ELRIdU6avqrZ_sR1DkV9npdraEqUeY9LPc0IkTqyaay3kIbMtRe1Xx9hB52VcX7-oq_upLF4t84YYqOXXZFj&_nc_zt=23&_nc_ht=scontent.famd21-2.fna&_nc_gid=SHFdJaN6gUNcs4KhNbjLNw&oh=00_AfYeCztEPOht-JYy7XIoLHT1ENMFJ94faAPa9JwidGRroQ&oe=68D8648B') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content, .services-content, .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .about-text, .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Services */
+        .service {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Gallery */
+        .gallery {
+            background: var(--primary);
+            color: white;
+        }
+
+        .gallery h2:after {
+            background: var(--secondary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Contact */
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-details {
+            margin-top: 20px;
+        }
+
+        .contact-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2530;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .language-switcher {
+                margin-top: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Modal for Gallery */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.6s;
+            margin-top: 50px;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+ .close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* Extra Mobile Fix */
+@media (max-width: 768px) {
+    .about-content,
+    .services-content,
+    .contact-content,
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image video,
+    .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+}
+</style>
+</head>
+   <!-- Header -->
+ <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-image">
+                    <div class="logo-image">
+  <img src="Picsart_25-08-20_09-25-24-677.png" height="86">
+</div>
+                 
+                </div>
+             <div class="logo-text">Piyush Boring<span>accurate boring solution</span></div>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#about" class="en">About</a><a href="#about" class="hi" style="display: none;">हमारे बारे में</a></li>
+                    <li><a href="#services" class="en">Services</a><a href="#services" class="hi" style="display: none;">सेवाएं</a></li>
+                    <li><a href="#gallery" class="en">Gallery</a><a href="#gallery" class="hi" style="display: none;">गैलरी</a></li>
+                    <li><a href="#contact" class="en">Contact</a><a href="#contact" class="hi" style="display: none;">संपर्क</a></li>
+                </ul>
+            </nav>
+            <div class="language-switcher">
+                <button class="language-btn active" id="english-btn">
+                    <i class="fas fa-language"></i> EN
+                </button>
+                <button class="language-btn" id="hindi-btn">
+                    <i class="fas fa-language"></i> HI
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="en">Road Railway & Canal crosing Company</h1>
+            <h1 class="hi" style="display: none;">Road Railway & Canal crosing Company</h1>
+            <p class="en">We provide reliable boring, drilling and pipeline services with our skilled team..</p>
+            <p class="hi" style="display: none;"> कुशल टीम के साथ विश्वसनीय बोरिंग, ड्रिलिंग और पाइपलाइन सेवाएं प्रदान करते हैं।</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#contact" class="btn en">Contact Us</a>
+                <a href="#contact" class="btn hi" style="display: none;">हमसे संपर्क करें</a>
+                <a href="#services" class="btn btn-outline en">Our Services</a>
+                <a href="#services" class="btn btn-outline hi" style="display: none;">हमारी सेवाएं</a>
+            </div>
+        </div>
+    </section>
+
+     <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="en">Years Experience</div>
+                    <div class="hi" style="display: none;">वर्षों का अनुभव</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">300+</div>
+                    <div class="en">Projects Completed</div>
+                    <div class="hi" style="display: none;">पूर्ण परियोजनाएं</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="en">Happy Clients</div>
+                    <div class="hi" style="display: none;">संतुष्ट ग्राहक</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="en">Machines</div>
+                    <div class="hi" style="display: none;">मशीनें</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="en">About Us</h2>
+            <h2 class="hi" style="display: none;">हमारे बारे में</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="en">➔ Piyush Boring Company has been providing expert services in the field of road boring and pipeline installation for the last 8 years.</p>
+                    <p class="en">➔ Our main services include:</p>
+                    <p class="en">Underground boring (road crossing boring) and pipeline installation. Our team utilizes modern machinery, skilled labor, and safe techniques. To date, we have completed over 300 projects and earned the trust of more than 150 clients.</p>
+                    <p class="en">➔ Our key market advantages:</p>
+                    <p class="en">Pipeline location is easy and accurate. Work is completed on time and within budget. Safety and quality are our top priorities.</p>
+                    <p class="en">➔ Our goal is to complete every project with the highest quality, on time, and to the complete satisfaction of our clients.</p>
+                    <p class="hi" style="display: none;"> ➔ पीयूष बोरिंग कंपनी पिछले 8 वर्षों से सड़क बोरिंग और पाइपलाइन स्थापना के क्षेत्र में विशेषज्ञ सेवाएं प्रदान कर रही है।</p>
+                    <p class="hi" style="display: none;"> ➔ हमारा मुख्य कार्य है:</p>
+                    <p class="hi" style="display: none;">भूमिगत बोरिंग (रोड क्रॉसिंग बोरिंग) और पाइपलाइन स्थापना (पाइपलाइन स्थापना)। हमारी टीम आधुनिक मशीनरी, कुशल श्रमिकों और सुरक्षित तकनीक का उपयोग करती है। हमने अब तक 300 से अधिक परियोजनाएँ पूरी की हैं और 150 से अधिक ग्राहकों का विश्वास अर्जित किया है।</p>
+                    <p class="hi" style="display: none;"> ➔ हमारे मुख्य बाज़ार लाभ:</p>
+                    <p class="hi" style="display: none;">पाइपलाइन की पहचान बिना किसी कठिनाई के की जा सकती है। कार्य समय पर और समय पर पूरा किया जाता है। सुरक्षा और गुणवत्ता पर विशेष ध्यान दिया जाता है।</p>
+                    <p class="hi" style="display: none;"> ➔ हमारा उद्देश्य प्रत्येक परियोजना को उच्चतम गुणवत्ता, समयबद्धता और ग्राहक संतुष्टि के साथ पूरा करना है</p>
+               
+                </div>
+                <div class="about-image">
+                    <video src="fainal.mp4" loop muted autoplay="autoplay" alt="Boring Machine">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="en">Our Services</h2>
+            <h2 class="hi" style="display: none;">हमारी सेवाएं</h2>
+            <div class="services-content">
+                <div class="service">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h3 class="en">accurate Boring</h3>
+                    <h3 class="hi" style="display: none;">सटीक बोरिंग</h3>
+                    <p class="en">accurate boring solutions for underground pipelines with minimal surface disruption.</p>
+                    <p class="hi" style="display: none;">न्यूनतम सतही व्यवधान के साथ भूमिगत पाइपलाइनों के लिए सटीक बोरिंग समाधान।</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-arrows-alt-v"></i>
+                    <h3 class="en">Vertical Boring</h3>
+                    <h3 class="hi" style="display: none;">ऊर्ध्वाधर बोरिंग</h3>
+                    <p class="en">High precision vertical boring for industrial projects, mining, and construction.</p>
+                    <p class="hi" style="display: none;">औद्योगिक परियोजनाओं, खनन और निर्माण के लिए उच्च परिशुद्धता वाली ऊर्ध्वाधर बोरिंग।</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-water"></i>
+                    <h3 class="en">Pipeline Installation</h3>
+                    <h3 class="hi" style="display: none;">पाइपलाइन बोरिंग</h3>
+                    <p class="en">Efficient pipeline boring services for water, gas and other utilities.</p>
+                    <p class="hi" style="display: none;">पानी, गैस और अन्य उपयोगिताओं के लिए कुशल पाइपलाइन बोरिंग सेवाएं।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+<section id="gallery" class="section gallery">
+    <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="photos">Photos</button>
+            <button class="filter-btn" data-filter="videos">Videos</button>
+        </div>
+        <div class="gallery-grid">
+            <!-- 10 Photos -->
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary1.jpg" alt="Boring Project 1">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 1</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary2.jpg" alt="Boring Project 2">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 2</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary3.jpg" alt="Boring Project 3">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 3</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary4.png" alt="Boring Project 4">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 4</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary5.png" alt="Boring Project 5">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 5</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary6.jpg" alt="Boring Project 6">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 6</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary7.jpg" alt="Boring Project 7">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 7</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary8.jpg" alt="Boring Project 8">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 8</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary9.jpg" alt="Boring Project 9">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 9</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="photos">
+                <img src="gallary/gallary10.jpg" alt="Boring Project 10">
+                <div class="gallery-item-overlay">
+                    <h3>Boring Project 10</h3>
+                </div>
+            </div>
+            
+            <!-- 10 Videos -->
+            <div class="gallery-item" data-category="videos">
+                <video controls poster="images/boring-process-1-poster.jpg">
+                    <source src="videos/boring-process-1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="gallery-item-overlay">
+                    <h3>Boring Process 1</h3>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="videos">
+                <video controls poster="images/boring-process-2-poster.jpg">
+                    <source src="videos/boring-process-2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+    <div class="container">
+        <h2 class="section-title">Our Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="project/project1.jpg" alt="Boring Project 1">
+                </div>
+                <div class="project-info">
+                    <h3>Boring Project 1</h3>
+                    <p>Precision boring for industrial machinery with tight tolerance requirements.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="project/project2.jpg" alt="Boring Project 2">
+                </div>
+                <div class="project-info">
+                    <h3>Boring Project 2</h3>
+                    <p>Custom boring solution for specialized equipment manufacturing.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="gallary12.png" alt="Boring Project 3">
+                </div>
+                <div class="project-info">
+                    <h3>Boring Project 3</h3>
+                    <p>Large-scale boring project for construction industry applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="en">Contact Us</h2>
+            <h2 class="hi" style="display: none;">संपर्क करें</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="en">Get in Touch</h3>
+                    <h3 class="hi" style="display: none;">संपर्क में रहें</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +91 7777956787 (Kishanbhai) </p>
+                        <p><i class="fas fa-phone"></i> +91 9316226293 (Arvindbhai) </p>
+                        <p><i class="fas fa-envelope"></i> piyushboring.official@gmail.com </p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span class="en">Near Primary School, Fulgram ,Wadhawan,Surendranagar,Gujarat,363435 </span><span class="hi" style="display: none;">Near Primary School, Fulgram ,Wadhawan,Surendranagar,Gujarat,363435</span></p>
+                        <p><i class="fas fa-clock"></i> <span class="en">Mon-Sun : 9AM - 6PM</span><span class="hi" style="display: none;">Mon-Sun : 9AM - 6PM</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script>
+        // Language switching functionality
+        document.getElementById('english-btn').addEventListener('click', function() {
+            document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
+            document.querySelectorAll('.hi').forEach(el => el.style.display = 'none');
+            document.getElementById('english-btn').classList.add('active');
+            document.getElementById('hindi-btn').classList.remove('active');
+        });
+
+        document.getElementById('hindi-btn').addEventListener('click', function() {
+            document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.hi').forEach(el => el.style.display = 'block');
+            document.getElementById('hindi-btn').classList.add('active');
+            document.getElementById('english-btn').classList.remove('active');
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after click
+                document.getElementById('nav-menu').classList.remove('show');
+            });
+        });
+
+        // Gallery modal functionality
+        const modal = document.getElementById("gallery-modal");
+        const modalImg = document.getElementById("modal-img");
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.querySelector('img').src;
+            });
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Footer Styles */
+        .footer-content {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .social-links {
+            margin-bottom: 25px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 28px;
+            margin: 0 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color: #333;
+        }
+
+        .social-links a:hover {
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .social-links a:hover.fa-facebook { background-color: #3b5998; }
+        .social-links a:hover.fa-twitter { background-color: #1da1f2; }
+        .social-links a:hover.fa-instagram { background-color: #e4405f; }
+        .social-links a:hover.fa-linkedin { background-color: #0077b5; }
+        .social-links a:hover.fa-youtube { background-color: #ff0000; }
+        .social-links a:hover.fa-whatsapp { background-color: #25d366; }
+
+        .
+        .contact-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #db1414ee;
+        }
+
+        /* Gallery Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+
+    </style>
+</head>
+<body>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <!-- Replace these links with your actual social media profiles -->
+                <a href="https://www.facebook.com/share/1BJ96jSk7g/" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/piyushboring
+                
+                " target="_blank" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href=" https://www.instagram.com/piyush_boring?igsh=ZHV3cGdqanVsaTU= " target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com/@piyushboring-g5y?feature=shared" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            
+            <p class="en">© 2025 Piyush Boring Company | All Rights Reserved</p>
+            <p class="hi" style="display: none;">© २०२५ पियुष बोरिंग कंपनी | सर्वाधिकार सुरक्षित</p>
+            
+            
+            
+           
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+ 
+    <script>
+   
+        // Gallery modal functionality
+       
+        // Close modal when clicking X
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to open modal with specific image
+        function openModal(imgSrc) {
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        // Add click functionality to social media icons
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const url = this.href;
+                const platform = this.title;
+                
+                // Optional: Add analytics tracking here
+                console.log(Opening ${platform}: ${url});
+                
+                // Open in new tab
+                window.open(url, '_blank');
+            });
+        });
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush Boring - Accurate Boring Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #1a5276;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #aed6f1;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: #1a5276;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #eaf2f8;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: #1a5276;
+            margin-bottom: 1rem;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: white;
+        }
+        
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: 1px solid #1a5276;
+            color: #1a5276;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem 0.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #1a5276;
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 250px;
+        }
+        
+        .gallery-item img, .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img, .gallery-item:hover video {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: #eaf2f8;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: #1a5276;
+        }
+        
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+  
